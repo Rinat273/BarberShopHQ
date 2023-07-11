@@ -10,6 +10,7 @@ class Client < ActiveRecord::Base
 	validates :phone, presence: true
 	validates :datestamp, presence: true
 	validates :color, presence: true
+	validates :barber, presence: true
 
 end
 
@@ -18,6 +19,7 @@ end
 
 before do
 	@barbers = Barber.all
+	@clients = Client.all
 end
 
 get '/' do
